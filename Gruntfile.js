@@ -8,7 +8,7 @@ module.exports = function(grunt) {
           imageAlpha: true,
           quitAfter: true
         },
-        src: ['views/images/']
+        src: ['img/']
       }
     },
     uglify: {
@@ -22,25 +22,24 @@ module.exports = function(grunt) {
         }
       }
     },
+    uncss: {
+      myTask: {
+      files: {
+          'css/print.css': ['project-2048.html', 'project-mobile.html', 'project-webperf.html','index.html']/*,
+          'views/css/style.min.css': ['views/pizza.html'],
+          'views/css/bootstrap-grid.min.css': ['views/js/pizza.html']*/
+        }
+      }
+    },
     cssmin: {
       myTask: {
       files: [{
         expand: true,
         cwd: 'views/css/',
         src: ['*.css', '!*.min.css'],
-        dest: 'views/css/',
+        dest: 'css/',
         ext: '.min.css'
         }]
-      }
-    },
-    uncss: {
-      myTask: {
-      files: {
-          'css/print.css': ['index.html'],
-          'css/style.css': ['index.html'],
-          'views/css/style.css': ['project-2048.html', 'project-mobile.html', 'project-webperf.html', 'views/js/pizza.html'],
-          'views/css/bootstrap-grid.css': ['project-2048.html', 'project-mobile.html', 'project-webperf.html', 'views/js/pizza.html']
-        }
       }
     },
     htmlmin: {
@@ -50,11 +49,11 @@ module.exports = function(grunt) {
         collapseWhitespace: true
         },
       files: {
-        'index.html': 'index.html',
+        /*'index.html': 'index.html',
         'project-2048.html': 'project-2048.html',
         'project-mobile.html': 'project-mobile.html',
-        'project-webperf.html': 'project-webperf.html',
-        'views/js/pizza.html': 'views/js/pizza.html'
+        'project-webperf.html': 'project-webperf.html',*/
+        'views/pizza.html': 'views/pizza.html'
         }
       }
     }
